@@ -28,7 +28,6 @@ library = {
 
 # Lengkapi inisialisasi aksi HLA untuk pergi ke bandara
 goto_airport = HLA('Go(Home,Airport)', precond='At(Home)', effect='At(Airport) & ~At(Home)')
-
 problem = PlanProblem('At(Home) & Have(Cash) & Have(Car) ', 'At(Airport) & Have(Cash)', [goto_airport])
 
 
