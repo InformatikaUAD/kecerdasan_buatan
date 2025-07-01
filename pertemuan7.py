@@ -3,7 +3,7 @@ from ai_pkg.utils import expr
 
 def double_tennis_problem():
     initial = 'At(A, LeftBaseLine) & At(B, RightNet) & Approaching(Ball, RightBaseLine) & Team(A, B) & Team(B, A)'
-    goal = 'Returned(Ball) & At(a, RightNet) & At(a, LeftNet)'
+    goal = 'Returned(Ball) & (At(A, RightNet) or At(A, LeftNet))'
     action = [Action('Hit(player, Ball, loc)', 
                 precond='Approaching(Ball, loc) & At(player, loc)',
                 effect='Returned(Ball)'),
